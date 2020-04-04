@@ -2,18 +2,17 @@
  * Colors
  */
 const color = {
-  white: '#FFF',
-  primary: '#F6871F',
-  primary_darker: '#D36600',
-  secondary: '#0076DE',
-  secondary_darker: '#00426B',
-  gray_darker: '#414251',
-  gray_dark: '#8D90A0',
-  gray_medium: '#B6BACD',
-  gray_light: '#E9EEF3',
-  gray_lighter: '#F6F9FB',
-  success: '#008904',
-  danger: '#E80000',
+  primary: {
+    _100: '#F2F6FF',
+    _200: '#D9E4FF',
+    _300: '#A6C1FF',
+    _400: '#598BFF',
+    _500: '#3F63F2',
+    _600: '#274BDB',
+    _700: '#1A34B8',
+    _800: '#102694',
+    _900: '#091C7A',
+  },
 };
 
 export default color;
