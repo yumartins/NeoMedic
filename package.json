@@ -1,0 +1,16 @@
+{
+  "name": "neomedic",
+  "version": "1.0.0",
+  "description": "Dashboard for user medic",
+  "main": "index.js",
+  "repository": "https://github.com/yumartins/neomedic.git",
+  "author": "Yuri Martins",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^6.0.0-alpha.3",
+    "react-router-dom": "^6.0.0-alpha.3"
+  }
+}
