@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { color, typograph } from './index';
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;1,600;1,700&display=swap');
@@ -45,7 +46,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: ${typograph.family};
+    background-color: ${color.primary._100};
     margin: 0;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;

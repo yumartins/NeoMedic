@@ -2,6 +2,8 @@
  * Typograph
  */
 const typography = {
+  family: '"Nunito Sans", sans-serif',
+
   weight: {
     regular: 400,
     semiBold: 600,
