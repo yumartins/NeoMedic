@@ -3,7 +3,7 @@ import IconFont from './styles';
 import { string } from 'prop-types';
 
 const Icon = ({ name }) => (
-  <IconFont className={`icon-${name}`} />
+  <IconFont className={`icon icon-${name}`} />
 );
 
 Icon.propTypes = {

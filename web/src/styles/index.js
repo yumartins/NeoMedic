@@ -1,17 +1,21 @@
 export {
   default as color,
-} from './utils/color';
+} from './color';
 
 export {
   easing,
   rotate360,
-} from './utils/animate';
+} from './animate';
 
 export {
   boxShadow,
   borderRadius,
-} from './utils/general';
+} from './general';
 
 export {
   default as typograph,
-} from './utils/typograph';
+} from './typograph';
+
+export {
+  default as GlobalStyles,
+} from './global';
