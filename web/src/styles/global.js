@@ -4,6 +4,18 @@ import { color, typograph } from './index';
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;1,600;1,700&display=swap');
 
+  @font-face {
+    font-family: 'neomedic';
+    src: url('../assets/fonts/neomedic.eot');
+    src: url('../assets/fonts/neomedic.eot') format('embedded-opentype'),
+      url('../assets/fonts/neomedic.ttf') format('truetype'),
+      url('../assets/fonts/neomedic.woff') format('woff'),
+      url('../assets/fonts/neomedic.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
   * {
     line-height: normal;
     letter-spacing: normal;

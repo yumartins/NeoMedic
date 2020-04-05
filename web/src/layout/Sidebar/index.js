@@ -1,6 +1,7 @@
 import React from 'react';
 import { Article, Image } from './styles';
 import Logo from '../../assets/logo.svg';
+import Icon from '../../components/Icon';
 
 const Sidebar = () => (
   <Article>
@@ -8,6 +9,8 @@ const Sidebar = () => (
       src={Logo}
       alt="Neo Medic"
     />
+
+    <Icon name="alert-triangle" />
   </Article>
 );
 
