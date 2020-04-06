@@ -1,25 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import { color, typograph } from './index';
 
-import IconFontEOT from '../assets/fonts/neomedic.eot';
-import IconFontTTF from '../assets/fonts/neomedic.ttf';
-import IconFontWOFF from '../assets/fonts/neomedic.woff';
-import IconFontSVG from '../assets/fonts/neomedic.svg';
-
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;1,600;1,700&display=swap');
-
-  @font-face {
-    font-family: 'neomedic';
-    src: url(${IconFontEOT});
-    src: url(${IconFontEOT}) format('embedded-opentype'),
-      url(${IconFontTTF}) format('truetype'),
-      url(${IconFontWOFF}) format('woff'),
-      url(${IconFontSVG}) format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
-  }
 
   * {
     line-height: normal;

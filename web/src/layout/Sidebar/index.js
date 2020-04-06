@@ -10,7 +10,7 @@ const Sidebar = () => (
       alt="Neo Medic"
     />
 
-    <Icon name="alert-triangle" />
+    <Icon name="facebook" />
   </Article>
 );
 
