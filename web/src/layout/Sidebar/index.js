@@ -1,7 +1,7 @@
 import React from 'react';
-import { Article, Image, Navigation, Item } from './styles';
+import { Article, NavIcon, Image, Navigation, Item } from './styles';
 import Logo from '../../assets/logo.svg';
-import { Icon, book, layout, messageCircle } from '../../components/Icon';
+import { book, layout, messageCircle } from '../../components/Icon';
 
 const routes = [
   {
@@ -11,7 +11,7 @@ const routes = [
   },
   {
     icon: book,
-    route: 'books,',
+    route: 'books',
     label: 'Agendar consultas',
   },
   {
@@ -29,13 +29,13 @@ const Sidebar = () => (
     />
 
     <Navigation>
-      {routes.map((item) => (
+      {routes.map(({ route, label, icon }) => (
         <Item
-          to={item.route}
-          key={item.label}
+          to={route}
+          key={label}
         >
-          <Icon name={item.icon} />
-          {item.label}
+          <NavIcon name={icon} />
+          {label}
         </Item>
       ))}
     </Navigation>
