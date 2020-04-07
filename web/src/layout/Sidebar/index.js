@@ -1,7 +1,25 @@
 import React from 'react';
-import { Article, Image } from './styles';
+import { Article, Image, Navigation, Item } from './styles';
 import Logo from '../../assets/logo.svg';
-import { Icon, activity } from '../../components/Icon';
+import { Icon, book, layout, messageCircle } from '../../components/Icon';
+
+const routes = [
+  {
+    icon: layout,
+    route: '/',
+    label: 'Dashboard',
+  },
+  {
+    icon: book,
+    route: 'books,',
+    label: 'Agendar consultas',
+  },
+  {
+    icon: messageCircle,
+    route: '/messages',
+    label: 'Conversas',
+  },
+];
 
 const Sidebar = () => (
   <Article>
@@ -10,7 +28,17 @@ const Sidebar = () => (
       alt="Neo Medic"
     />
 
-    <Icon name={activity}/>
+    <Navigation>
+      {routes.map((item) => (
+        <Item
+          to={item.route}
+          key={item.label}
+        >
+          <Icon name={item.icon} />
+          {item.label}
+        </Item>
+      ))}
+    </Navigation>
   </Article>
 );
 
