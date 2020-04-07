@@ -1,7 +1,7 @@
 import React from 'react';
 import { Article, Image } from './styles';
 import Logo from '../../assets/logo.svg';
-import Icon from '../../components/Icon';
+import { Icon, activity } from '../../components/Icon';
 
 const Sidebar = () => (
   <Article>
@@ -10,7 +10,7 @@ const Sidebar = () => (
       alt="Neo Medic"
     />
 
-    <Icon name="facebook" />
+    <Icon name={activity}/>
   </Article>
 );
 
