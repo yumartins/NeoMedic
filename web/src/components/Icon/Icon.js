@@ -6,8 +6,10 @@ const Icon = ({
   name,
   size,
   color,
+  ...rest
 }) => (
   <SVG
+    {...rest}
     width={`${size}px`}
     height={`${size}px`}
     viewBox="0 0 1024 1024"

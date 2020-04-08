@@ -1,25 +1,17 @@
 import React from 'react';
-import { Article, NavIcon, Image, Navigation, Item } from './styles';
-import Logo from '../../assets/logo.svg';
-import { book, layout, messageCircle } from '../../components/Icon';
-
-const routes = [
-  {
-    icon: layout,
-    route: '/',
-    label: 'Dashboard',
-  },
-  {
-    icon: book,
-    route: 'books',
-    label: 'Agendar consultas',
-  },
-  {
-    icon: messageCircle,
-    route: '/messages',
-    label: 'Conversas',
-  },
-];
+import {
+  Name,
+  Item,
+  Image,
+  Picture,
+  Article,
+  NavIcon,
+  Profile,
+  Navigation,
+} from './styles';
+import Logo from '../../assets/images/logo.svg';
+import routes from './routes';
+import User from '../../assets/images/user.jpg';
 
 const Sidebar = () => (
   <Article>
@@ -39,6 +31,11 @@ const Sidebar = () => (
         </Item>
       ))}
     </Navigation>
+
+    <Profile>
+      <Picture src={User} />
+      <Name>Carolina Alves</Name>
+    </Profile>
   </Article>
 );
 
