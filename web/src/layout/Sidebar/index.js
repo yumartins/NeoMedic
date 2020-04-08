@@ -1,8 +1,10 @@
 import React from 'react';
 import {
   Name,
+  Link,
   Item,
   Image,
+  Content,
   Picture,
   Article,
   NavIcon,
@@ -32,9 +34,12 @@ const Sidebar = () => (
       ))}
     </Navigation>
 
-    <Profile>
+    <Profile to="/profile">
       <Picture src={User} />
-      <Name>Carolina Alves</Name>
+      <Content>
+        <Name>Carolina Alves</Name>
+        <Link>Ver meu perfil</Link>
+      </Content>
     </Profile>
   </Article>
 );

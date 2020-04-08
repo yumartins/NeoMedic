@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typograph, borderRadius } from '../../styles';
+import { color, typograph, radius, shadow } from '../../styles';
 import { NavLink } from 'react-router-dom';
 import { Icon } from '../../components/Icon';
 
@@ -70,18 +70,59 @@ export const Item = styled(NavLink)`
   }
 `;
 
-export const Profile = styled.div`
+export const Name = styled.h6`
+  font-size: ${typograph.size.s2};
+  font-weight: ${typograph.weight.semiBold};
+  color: ${color.gray._1000};
+`;
+
+export const Link = styled.span`
+  font-size: ${typograph.size.s1};
+  color: ${color.gray._600};
+`;
+
+export const Profile = styled(NavLink)`
   margin-top: auto;
   padding: 16px 40px;
   display: flex;
   align-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    width: 2px;
+    height: 100%;
+  }
+
+  &.active {
+    color: ${color.primary._500};
+    background-color: ${color.primary.transparency._100};
+
+    &::after {
+      background-color: ${color.primary._500};
+    }
+
+    ${Name} {
+      color: ${color.primary._500};
+    }
+
+    ${Link} {
+      color: ${color.primary._400}
+    }
+  }
 `;
 
 export const Picture = styled.img`
-  width: 32px;
-  height: 32px;
-  border-radius: ${borderRadius.sm}px;
-  border: 2px solid ${color.gray._100};
+  width: 48px;
+  height: 48px;
+  border-radius: ${radius.lg}px;
+  border: 4px solid ${color.gray._100};
+  box-shadow: ${shadow.md};
 `;
 
-export const Name = styled.h6``;
+export const Content = styled.div`
+  margin-left: 8px;
+`;

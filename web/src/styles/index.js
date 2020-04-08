@@ -8,8 +8,8 @@ export {
 } from './animate';
 
 export {
-  boxShadow,
-  borderRadius,
+  shadow,
+  radius,
 } from './general';
 
 export {
