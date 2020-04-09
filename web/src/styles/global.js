@@ -54,6 +54,11 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
   }
+
+  #root {
+    display: flex;
+    justify-content: flex-start;
+  }
 `;
 
 export default GlobalStyles;
