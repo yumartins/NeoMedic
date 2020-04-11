@@ -1,12 +1,23 @@
 import React from 'react';
 import MapBox from '../../components/MapBox';
-import { Title } from './styles';
-import Container from '../../layout/Container';
+import {
+  View,
+  Head,
+  Title,
+  SubTitle,
+  Container,
+} from './styles';
 
 const Dashboard = () => (
-  <Container title="Dashboard">
+  <View>
+    <Container>
+      <Head>
+        <SubTitle>Agende uma</SubTitle>
+        <Title>Consulta</Title>
+      </Head>
+    </Container>
     <MapBox />
-  </Container>
+  </View>
 );
 
 export default Dashboard;

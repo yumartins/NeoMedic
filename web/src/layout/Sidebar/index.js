@@ -1,13 +1,17 @@
 import React from 'react';
 import {
+  Name,
   Item,
   Image,
+  Profile,
+  Picture,
   Article,
   NavIcon,
   Navigation,
 } from './styles';
 import Logo from '../../assets/images/logo.svg';
 import routes from './routes';
+import User from '../../assets/images/user.jpg';
 
 const Sidebar = () => (
   <Article>
@@ -16,7 +20,8 @@ const Sidebar = () => (
       alt="Neo Medic"
     />
 
-    <Navigation>
+    {/**
+     * <Navigation>
       {routes.map(({ route, label, icon }) => (
         <Item
           to={route}
@@ -27,6 +32,12 @@ const Sidebar = () => (
         </Item>
       ))}
     </Navigation>
+     */}
+
+    <Profile to="/profile">
+      <Picture src={User} />
+      <Name>Carolina Alves</Name>
+    </Profile>
   </Article>
 );
 

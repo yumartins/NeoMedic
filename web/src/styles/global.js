@@ -47,7 +47,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${typograph.family};
-    background-color: ${color.primary._100};
+    background-color: "#FAFBFF";
     margin: 0;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -57,6 +57,7 @@ const GlobalStyles = createGlobalStyle`
 
   #root {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
   }
 `;

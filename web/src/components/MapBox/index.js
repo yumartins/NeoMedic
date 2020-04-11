@@ -13,13 +13,13 @@ const geolocateStyle = {
 const MapBox = () => {
   const [viewport, setViewPort] = useState({
     width: "100%",
-    height: 600,
+    height: "100%",
     latitude: 0,
     longitude: 0,
     zoom: 2
   });
 
-  const onViewportChange = (viewport) => setViewPort({...viewport, transitionDuration: 3000 });
+  const onViewportChange = (viewport) => setViewPort({...viewport, transitionDuration: 1000 });
 
   return (
     <MapGL
