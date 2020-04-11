@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { Form } from '@unform/web';
 import MapBox from '../../components/MapBox';
+import Input from '../../components/Form/Input';
 import {
   View,
   Head,
@@ -16,6 +17,14 @@ const Dashboard = () => (
         <SubTitle>Agende uma</SubTitle>
         <Title>Consulta</Title>
       </Head>
+
+      <Form>
+        <Input
+          name="search"
+          label="Pesquisar"
+          hasSearch
+        />
+      </Form>
     </Container>
     <MapBox />
   </View>
