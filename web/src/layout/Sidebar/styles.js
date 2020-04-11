@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { color, typograph, radius, shadow } from '../../styles';
 import { NavLink } from 'react-router-dom';
+import {
+  color, typograph, radius, shadow,
+} from '../../styles';
 import { Icon } from '../../components/Icon';
 
 export const Image = styled.img`
@@ -8,13 +10,15 @@ export const Image = styled.img`
 `;
 
 export const Article = styled.article`
-  width: 100%;
+  width: ${({ full }) => (full ? '100%' : '864px')};
   padding: 32px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 9;
+  top: 0;
+  left: 0;
 `;
 
 export const Navigation = styled.div`
@@ -71,4 +75,3 @@ export const Picture = styled.img`
   border: 4px solid ${color.gray._100};
   box-shadow: ${shadow.md};
 `;
-
