@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { color, typograph, radius } from '../../../styles';
+import {
+  color,
+  easing,
+  radius,
+  typograph,
+} from '../../../styles';
 import { Icon } from '../../Icon';
 
 export const View = styled.div`
@@ -15,7 +20,7 @@ export const Label = styled.label`
   top: 24px;
   left: 16px;
   line-height: 20px;
-  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all .5s ${easing.rubber};
 `;
 
 export const Wrapper = styled.input`
@@ -26,7 +31,7 @@ export const Wrapper = styled.input`
   border: 1px solid ${color.gray._300};
   color: ${color.gray._700};
   font-weight: ${typograph.weight.semiBold};
-  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all .5s ${easing.rubber};
 `;
 
 export const Search = styled(Icon)`
@@ -35,7 +40,7 @@ export const Search = styled(Icon)`
   position: absolute;
   right: 16px;
   cursor: pointer;
-  transition: all .5s ease-in-out;
+  transition: all .5s ${easing.basic};
 
   path {
     fill: ${color.gray._600}
