@@ -14,7 +14,18 @@ export const Container = styled.article`
 
 export const Head = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const Left = styled.div`
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const Right = styled.div`
+  margin-left: auto;
 `;
 
 export const SubTitle = styled.h4`
