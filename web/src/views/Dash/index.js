@@ -1,16 +1,20 @@
 import React from 'react';
-import { Form } from '@unform/web';
 import MapBox from '../../components/MapBox';
 import Input from '../../components/Form/Input';
 import Sidebar from '../../layout/Sidebar';
 import Button from '../../components/Button';
-import { map } from '../../components/Icon';
+import { arrowIosForward } from '../../components/Icon';
 import {
+  List,
   View,
   Head,
   Left,
+  Card,
+  Cards,
   Right,
   Title,
+  Search,
+  ListItem,
   SubTitle,
   Container,
 } from './styles';
@@ -28,20 +32,36 @@ const Dashboard = () => (
 
         <Right>
           <Button
-            icon={map}
+            icon={arrowIosForward}
             label="Pesquisa avançada"
             appearence="primary"
           />
         </Right>
       </Head>
 
-      <Form>
+      <Search>
         <Input
           name="search"
           label="Pesquisar"
           hasSearch
         />
-      </Form>
+      </Search>
+
+      <List>
+        <ListItem>Cardiologista</ListItem>
+        <ListItem>Dermatologista</ListItem>
+        <ListItem>Cirurgião Plástico</ListItem>
+        <ListItem>Ginecologista</ListItem>
+        <ListItem>Psiquiatra</ListItem>
+        <ListItem>Ortopedista</ListItem>
+      </List>
+
+      <Cards>
+        <Card to="/doctor">
+
+          <h1>Olá</h1>
+        </Card>
+      </Cards>
     </Container>
   </View>
 );
