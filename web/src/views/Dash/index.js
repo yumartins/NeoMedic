@@ -13,9 +13,9 @@ import {
 
 const Dashboard = () => (
   <View>
-    <Sidebar />
+    <Sidebar full />
 
-    <Container>
+    <Container full>
       <Head>
         <SubTitle>Agende uma</SubTitle>
         <Title>Consulta</Title>
@@ -29,7 +29,6 @@ const Dashboard = () => (
         />
       </Form>
     </Container>
-    <MapBox />
   </View>
 );
 

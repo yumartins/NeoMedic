@@ -1,4 +1,5 @@
 import React from 'react';
+import { bool } from 'prop-types';
 import {
   Name,
   Item,
@@ -13,8 +14,8 @@ import Logo from '../../assets/images/logo.svg';
 import routes from './routes';
 import User from '../../assets/images/user.jpg';
 
-const Sidebar = () => (
-  <Article>
+const Sidebar = ({ full }) => (
+  <Article full={full}>
     <Image
       src={Logo}
       alt="Neo Medic"
@@ -40,5 +41,13 @@ const Sidebar = () => (
     </Profile>
   </Article>
 );
+
+Sidebar.propTypes = {
+  full: bool,
+};
+
+Sidebar.defaultProps = {
+  full: false,
+};
 
 export default Sidebar;

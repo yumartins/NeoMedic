@@ -3,14 +3,13 @@ import { color, shadow, typograph } from '../../styles';
 
 export const View = styled.div`
   display: flex;
-  height: 100vh;
 `;
 
 export const Container = styled.article`
   background-color: ${color.gray._100};
-  box-shadow: 0 32px 24px 0 rgba(217, 228, 255, .24);
+  box-shadow: ${({ expand }) => expand && shadow.horizontal};
   padding: 140px 48px 48px 48px;
-  min-width: 864px;
+  min-width: ${({ full }) => (full ? '100%' : '864px')};
 `;
 
 export const Head = styled.div`
