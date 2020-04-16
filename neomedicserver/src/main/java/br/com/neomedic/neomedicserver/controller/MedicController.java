@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,8 +21,10 @@ public class MedicController {
     private MedicService medicService;
 
     @GetMapping
-    public ResponseEntity page(@PageableDefault(page = 0, size = 20)Pageable pageable){
-        return ResponseEntity.ok(medicService.findPageable(pageable));
+    public ResponseEntity page(@PageableDefault(page = 0, size = 20)Pageable pageable,
+                               @RequestParam(required = false) String city,
+                               @RequestParam(required = false) String specialization){
+        return ResponseEntity.ok(medicService.findMedicByPage(city, specialization, pageable));
     }
 
     @PostMapping

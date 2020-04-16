@@ -30,12 +30,6 @@ public class MedicServiceImpl implements MedicService {
         this.specializationService = specializationService;
     }
 
-
-    @Override
-    public Page<Medic> findPageable(Pageable page) {
-        return medicRepository.findAll(page);
-    }
-
     @Override
     public Medic createMedic(Medic medic) {
 
@@ -69,12 +63,17 @@ public class MedicServiceImpl implements MedicService {
         return medicRepository.save(medic);
     }
 
-    private Clinic addMedicToClinic(Medic medic, Clinic clinic) {
-        Optional<Clinic> clinicUpdated = clinicService.addMedicToClinic(clinic.getId(), medic);
-        if(clinicUpdated.isEmpty()) {
-            throw new MedicException("Clinic " + clinic.getId() + " not found");
+    @Override
+    public Page<Medic> findMedicByPage(String cityName, String specializationName, Pageable page) {
+        if( cityName != null && specializationName != null ) {
+            return medicRepository.findByClinics_CityNameAndSpecializationName(cityName, specializationName, page);
+        } else if( cityName != null ) {
+            return medicRepository.findByClinics_CityName(cityName, page);
+        } else if( specializationName != null ) {
+            return medicRepository.findBySpecializationName(specializationName, page);
+        } else {
+            return medicRepository.findAll( page );
         }
-        return clinicUpdated.get();
     }
 
 }
