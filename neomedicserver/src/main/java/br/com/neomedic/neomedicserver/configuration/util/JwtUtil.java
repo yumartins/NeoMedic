@@ -56,7 +56,7 @@ public class JwtUtil {
         String token = Jwts.builder()
                 .setSubject(username)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .signWith(SignatureAlgorithm.ES512, SECRET)
+                .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
 
         response.addHeader(HEADER_KEY, TOKEN_PREFIX + " " + token);
@@ -67,11 +67,11 @@ public class JwtUtil {
             String token = request.getHeader(HEADER_KEY);
 
             if (token != null) {
-                Long user = Long.valueOf(Jwts.parser()
+                String user = Jwts.parser()
                         .setSigningKey(SECRET)
-                        .parseClaimsJws(token.replace(HEADER_KEY, ""))
+                        .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
                         .getBody()
-                        .getSubject());
+                        .getSubject();
 
                 return Optional.of(new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList()));
             }

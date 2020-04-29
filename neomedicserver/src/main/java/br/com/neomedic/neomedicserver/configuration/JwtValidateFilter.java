@@ -25,12 +25,9 @@ public class JwtValidateFilter extends GenericFilterBean {
 
         Optional<Authentication> authentication = JwtUtil.getAuth((HttpServletRequest) servletRequest);
 
-        if(authentication.isPresent()) {
-            SecurityContextHolder.getContext().setAuthentication(authentication.get());
-            filterChain.doFilter(servletRequest, servletResponse);
-        }
+        authentication.ifPresent(value -> SecurityContextHolder.getContext().setAuthentication(value));
 
-//        throw new RuntimeException("User dont authenticated");
+        filterChain.doFilter(servletRequest, servletResponse);
 
     }
 
