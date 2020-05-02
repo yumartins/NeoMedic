@@ -1,9 +1,12 @@
 package br.com.neomedic.neomedicserver.configuration.util;
 
+import br.com.neomedic.neomedicserver.model.Role;
+import br.com.neomedic.neomedicserver.service.RoleService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,9 +16,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
-@Component
+@Component("jwtUtil")
 public class JwtUtil {
 
     private static final Logger logger = LogManager.getLogger(JwtUtil.class);
@@ -31,6 +36,14 @@ public class JwtUtil {
 
     private String headerKey;
     public static String HEADER_KEY;
+
+    private final RoleService roleService;
+    private static JwtUtil instance;
+
+    public JwtUtil(RoleService roleService) {
+        this.roleService = roleService;
+        JwtUtil.instance = this;
+    }
 
     @Value("${jwt.expiration.time:860000000}")
     public void setExpirationTime(long expirationTime) {
@@ -63,6 +76,10 @@ public class JwtUtil {
     }
 
     public static Optional<Authentication> getAuth(HttpServletRequest request) {
+        return instance.getAuthInternal(request);
+    }
+
+    private Optional<Authentication> getAuthInternal(HttpServletRequest request) {
         try {
             String token = request.getHeader(HEADER_KEY);
 
@@ -72,6 +89,12 @@ public class JwtUtil {
                         .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
                         .getBody()
                         .getSubject();
+
+
+                Optional<Set<Role>> roles = roleService.getAllUserRoles(user);
+                if(roles.isPresent()){
+                    return Optional.of(new UsernamePasswordAuthenticationToken(user, null, roles.get()));
+                }
 
                 return Optional.of(new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList()));
             }
