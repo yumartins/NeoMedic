@@ -4,7 +4,7 @@ import {
   easing,
   radius,
   typograph,
-} from '../../../styles';
+} from 'neomedic-styles';
 import { Icon } from '../../Icon';
 
 export const View = styled.div`

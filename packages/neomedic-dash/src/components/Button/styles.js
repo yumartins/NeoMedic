@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, typograph, radius } from '../../styles';
+import { color, typograph, radius } from 'neomedic-styles';
 import { Icon } from '../Icon';
 
 const sizes = {

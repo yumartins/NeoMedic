@@ -3,7 +3,7 @@ import { Form } from '@unform/web';
 import { NavLink } from 'react-router-dom';
 import {
   color, shadow, typograph, radius,
-} from '../../styles';
+} from 'neomedic-styles';
 
 export const View = styled.div`
   display: flex;
