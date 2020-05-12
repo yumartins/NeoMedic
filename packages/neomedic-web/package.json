@@ -1,5 +1,5 @@
 {
-  "name": "neomedic",
+  "name": "neomedic-web",
   "version": "1.0.0",
   "description": "Dashboard for user medic",
   "main": "index.js",

@@ -1,0 +1,21 @@
+{
+  "name": "neomedic",
+  "private": true,
+  "scripts": {
+    "android": "lerna --scope=neomedic-app run android --stream --",
+    "ios": "lerna --scope=neomedic-app run ios --stream --",
+    "web": "lerna --scope=neomedic-web run start --stream --"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

@@ -13,7 +13,7 @@ export const View = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: ${typograph.size.s2};
+  font-size: ${typograph.size.s3};
   font-weight: ${typograph.weight.semiBold};
   color: ${color.gray._600};
   position: absolute;
@@ -56,6 +56,7 @@ export const Target = styled.div`
   ${({ focus }) => !focus} {
     ${Label} {
       color: ${color.gray._500};
+      font-size: ${typograph.size.s2};
       font-weight: ${typograph.weight.regular};
       top: 12px;
     };
