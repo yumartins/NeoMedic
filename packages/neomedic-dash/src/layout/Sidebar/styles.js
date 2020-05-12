@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import {
   color, typograph, radius, shadow,
-} from '../../styles';
+} from 'neomedic-styles';
 import { Icon } from '../../components/Icon';
 
 export const Image = styled.img`

@@ -1,0 +1,8 @@
+{
+  "name": "neomedic-styles",
+  "version": "0.0.1",
+  "private": false,
+  "main": "index.js",
+  "author": "Yuri Martins",
+  "description": "neomedic styles"
+}

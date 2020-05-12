@@ -1,10 +1,12 @@
 {
   "name": "neomedic",
   "private": true,
+  "repository": "https://github.com/yumartins/neomedic.git",
   "scripts": {
     "android": "lerna --scope=neomedic-app run android --stream --",
     "ios": "lerna --scope=neomedic-app run ios --stream --",
-    "web": "lerna --scope=neomedic-web run start --stream --"
+    "dash": "lerna --scope=neomedic-dash run start --stream --",
+    "bootstrap": "lerna bootstrap --use-workspaces"
   },
   "workspaces": {
     "packages": [
