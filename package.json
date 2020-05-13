@@ -3,6 +3,8 @@
   "private": true,
   "repository": "https://github.com/yumartins/neomedic.git",
   "scripts": {
+    "test": "bash ./.bin/sugar.sh test $*",
+    "build": "bash .bin/sugar.sh build $*",
     "android": "lerna --scope=neomedic-app run android --stream",
     "ios": "lerna --scope=neomedic-app run ios --stream",
     "dash": "yarn workspace neomedic-dash run start --stream",

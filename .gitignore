@@ -1,1 +1,13 @@
+# project stuff
 node_modules
+build
+
+# ide stuff
+.idea
+.vscode
+
+# other stuff
+.env
+*.log
+.DS_Store
+*.pem
