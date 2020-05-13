@@ -5,7 +5,7 @@
   "scripts": {
     "android": "lerna --scope=neomedic-app run android --stream",
     "ios": "lerna --scope=neomedic-app run ios --stream",
-    "dash": "yarn lerna --scope=neomedic-dash run start --stream",
+    "dash": "yarn workspace neomedic-dash run start --stream",
     "bootstrap": "lerna bootstrap --use-workspaces"
   },
   "workspaces": {
@@ -21,6 +21,8 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.6",
     "cross-env": "^7.0.2",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -29,7 +31,10 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.1",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
