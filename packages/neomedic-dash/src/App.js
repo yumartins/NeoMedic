@@ -1,8 +1,9 @@
 import 'normalize.css';
 import React from 'react';
 
+import { GlobalStyles } from 'neomedic-styles';
+
 import Routes from './routes';
-import { GlobalStyles } from './styles';
 
 const App = () => (
   <>

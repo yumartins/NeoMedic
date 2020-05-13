@@ -3,9 +3,9 @@
   "private": true,
   "repository": "https://github.com/yumartins/neomedic.git",
   "scripts": {
-    "android": "lerna --scope=neomedic-app run android --stream --",
-    "ios": "lerna --scope=neomedic-app run ios --stream --",
-    "dash": "lerna --scope=neomedic-dash run start --stream --",
+    "android": "lerna --scope=neomedic-app run android --stream",
+    "ios": "lerna --scope=neomedic-app run ios --stream",
+    "dash": "yarn lerna --scope=neomedic-dash run start --stream",
     "bootstrap": "lerna bootstrap --use-workspaces"
   },
   "workspaces": {
@@ -18,6 +18,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "cross-env": "^7.0.2",
     "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
