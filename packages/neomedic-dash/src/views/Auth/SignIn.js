@@ -1,13 +1,26 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Form } from '@unform/web';
 import { api, useAuth } from 'neomedic-authorization';
 
 import Input from '../../components/Form/Input';
-import { View, Container, Ilustation } from './styles';
+import {
+  Head,
+  View,
+  Title,
+  Container,
+  Ilustation,
+} from './styles';
+
+const headings = [
+  'Entrar',
+  'Cadastrar',
+];
 
 const SignIn = () => {
+  const [selected, onSelected] = useState(headings[0]);
+
   const ref = useRef(null);
 
   const {
@@ -30,6 +43,17 @@ const SignIn = () => {
   return (
     <View>
       <Container>
+        <Head>
+          {headings.map((value) => (
+            <Title
+              key={value}
+              selected={value === selected}
+              onClick={() => onSelected(value)}
+            >
+              {value}
+            </Title>
+          ))}
+        </Head>
         <Form
           ref={ref}
           onSubmit={handleSubmit}
