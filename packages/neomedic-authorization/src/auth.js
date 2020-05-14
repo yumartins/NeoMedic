@@ -112,7 +112,7 @@ export const AuthProvider = ({ children }) => {
     /**
      * Set token.
      */
-    await localStorage.setItem(TOKEN_KEY, response.data.accessToken);
+    await localStorage.setItem(TOKEN_KEY, response.defaults.headers.common.Authorization);
 
     return check(true);
   };

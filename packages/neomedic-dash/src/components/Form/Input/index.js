@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
+
 import { useField } from '@unform/core';
 import { bool, string } from 'prop-types';
+
 import { search } from '../../Icon';
 import {
   View,
