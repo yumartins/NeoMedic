@@ -3,5 +3,7 @@ export {
 } from './api';
 
 export {
-  default as auth,
+  useAuth,
+  AuthContext,
+  AuthProvider,
 } from './auth';

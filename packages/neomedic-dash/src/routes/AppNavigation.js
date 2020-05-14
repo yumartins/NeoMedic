@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Dashboard from '../views/Dash';
+import Dashboard from '../views/App/Dash';
 
 const AppNavigation = () => (
   <Routes>

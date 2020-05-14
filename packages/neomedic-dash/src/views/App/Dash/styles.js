@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import { Form } from '@unform/web';
 import { NavLink } from 'react-router-dom';
+
+import { Form } from '@unform/web';
 import {
   color, shadow, typograph, radius,
 } from 'neomedic-styles';
+import styled from 'styled-components';
 
 export const View = styled.div`
   display: flex;
