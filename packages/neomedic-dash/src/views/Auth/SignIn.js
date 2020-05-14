@@ -5,6 +5,7 @@ import { Form } from '@unform/web';
 import { api, useAuth } from 'neomedic-authorization';
 
 import Input from '../../components/Form/Input';
+import { View, Container, Ilustation } from './styles';
 
 const SignIn = () => {
   const ref = useRef(null);
@@ -27,27 +28,30 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <h1>SignIn</h1>
-      <Form
-        ref={ref}
-        onSubmit={handleSubmit}
-      >
-        <Input
-          name="username"
-          label="Usuário"
-        />
-        <Input
-          name="password"
-          label="Senha"
-          type="password"
-        />
+    <View>
+      <Container>
+        <Form
+          ref={ref}
+          onSubmit={handleSubmit}
+        >
+          <Input
+            name="username"
+            label="Usuário"
+          />
+          <Input
+            name="password"
+            label="Senha"
+            type="password"
+          />
 
-        <button type="submit">
-          Entrar
-        </button>
-      </Form>
-    </div>
+          <button type="submit">
+            Entrar
+          </button>
+        </Form>
+      </Container>
+
+      <Ilustation />
+    </View>
   );
 };
 
