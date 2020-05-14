@@ -2,7 +2,17 @@
   "name": "neomedic-styles",
   "version": "0.0.1",
   "private": false,
-  "main": "index.js",
   "author": "Yuri Martins",
-  "description": "neomedic styles"
+  "description": "neomedic styles",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src --out-dir ./build --source-maps -D",
+    "coverage": "nyc --reporter=html mocha --require @babel/register",
+    "test": "cross-env NODE_ENV=testing mocha --require @babel/register"
+  },
+  "babel": {
+    "presets": [
+      "module:neomedic-babel-preset"
+    ]
+  }
 }
