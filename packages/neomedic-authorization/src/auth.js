@@ -153,3 +153,8 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+/**
+ * Module hook.
+ */
+export const useAuth = () => useContext(AuthContext);
