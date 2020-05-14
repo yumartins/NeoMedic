@@ -104,23 +104,17 @@ export const AuthProvider = ({ children }) => {
    * Authenticates user.
    */
   const login = async (username, password) => {
-    try {
-      const response = await api.post('/login', {
-        username,
-        password,
-      });
+    const response = await api.post('/login', {
+      username,
+      password,
+    });
 
-      /**
-       * Set token.
-       */
-      await localStorage.setItem(TOKEN_KEY, response.data.accessToken);
+    /**
+     * Set token.
+     */
+    await localStorage.setItem(TOKEN_KEY, response.data.accessToken);
 
-      return check(true);
-    } catch (err) {
-      throw {
-        password: 'Dados incorretos, verifique novamente',
-      };
-    }
+    return check(true);
   };
 
   /**
