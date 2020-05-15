@@ -4,8 +4,14 @@ import { string } from 'prop-types';
 
 import { Dot, Dots } from './styles';
 
-const Loading = ({ type }) => (
-  <Dots type={type}>
+const Loading = ({
+  size,
+  appearance,
+}) => (
+  <Dots
+    size={size}
+    appearance={appearance}
+  >
     <Dot />
     <Dot />
     <Dot />
@@ -13,11 +19,13 @@ const Loading = ({ type }) => (
 );
 
 Loading.propTypes = {
-  type: string,
+  size: string,
+  appearance: string,
 };
 
 Loading.defaultProps = {
-  type: 'primary',
+  size: 'sm',
+  appearance: 'primary',
 };
 
 export default Loading;

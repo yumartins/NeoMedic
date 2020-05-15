@@ -2,6 +2,7 @@ import React from 'react';
 
 import { string, bool } from 'prop-types';
 
+import Loading from '../Loading';
 import { Content, NavIcon } from './styles';
 
 const Button = ({
@@ -9,6 +10,7 @@ const Button = ({
   icon,
   label,
   submit,
+  loading,
   appearance,
   ...rest
 }) => (
@@ -18,7 +20,10 @@ const Button = ({
     size={size}
     appearance={appearance}
   >
-    {label}
+    {loading
+      ? <Loading appearance="secondary" />
+      : label}
+
     {icon && (
       <NavIcon
         name={icon}
@@ -33,6 +38,7 @@ Button.propTypes = {
   icon: string,
   label: string.isRequired,
   submit: bool,
+  loading: bool,
   appearance: string,
 };
 
@@ -40,6 +46,7 @@ Button.defaultProps = {
   size: 'lg',
   icon: '',
   submit: false,
+  loading: false,
   appearance: 'primary',
 };
 

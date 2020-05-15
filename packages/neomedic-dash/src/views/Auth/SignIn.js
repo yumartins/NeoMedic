@@ -25,6 +25,7 @@ const headings = [
 ];
 
 const SignIn = () => {
+  const [loading, onLoading] = useState(true);
   const [selected, onSelected] = useState(headings[0]);
 
   const ref = useRef(null);
@@ -39,8 +40,8 @@ const SignIn = () => {
    * Handle login attempt.
    */
   const handleSubmit = async (data) => {
+    onLoading(! loading);
     await run('login', data.username, data.password);
-
     navigate('/');
   };
 
@@ -97,10 +98,9 @@ const SignIn = () => {
           <Action
             submit
             label={selected}
+            loading={loading}
           />
         </Form>
-
-        <Loading />
 
         <Recovery>
           Esqueceu a senha?
