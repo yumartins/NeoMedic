@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { color, typograph, easing } from 'neomedic-styles';
 import styled from 'styled-components';
 
@@ -18,6 +20,11 @@ export const View = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+`;
+
+export const Logo = styled.img`
+  margin: 0 auto 48px 0;
+  width: 140px;
 `;
 
 export const Title = styled.h1`
@@ -47,6 +54,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 `;
 
 export const InputForm = styled(Input)`
@@ -57,6 +65,22 @@ export const Action = styled(Button)`
   margin-top: 24px;
   width: 100%;
   justify-content: center;
+`;
+
+export const Recovery = styled.span`
+  position: absolute;
+  display: flex;
+  bottom: 40px;
+  color: ${gray._600};
+  font-size: ${size.s2};
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+export const RecoveryLink = styled(Link)`
+  margin-left: 4px;
+  color: ${primary._500};
+  font-weight: ${weight.semiBold};
 `;
 
 export const Ilustation = styled.div`

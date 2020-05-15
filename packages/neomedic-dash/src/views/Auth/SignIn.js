@@ -2,16 +2,20 @@ import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Form } from '@unform/web';
+import Image from 'neomedic-assets/svgs/logo.svg';
 import { useAuth } from 'neomedic-authorization';
 
 import {
   Head,
+  Logo,
   View,
   Title,
   Action,
+  Recovery,
   InputForm,
   Container,
   Ilustation,
+  RecoveryLink,
 } from './styles';
 
 const headings = [
@@ -42,6 +46,12 @@ const SignIn = () => {
   return (
     <View>
       <Container>
+
+        <Logo
+          src={Image}
+          alt="NeoMedic"
+        />
+
         <Head>
           {headings.map((value) => (
             <Title
@@ -53,6 +63,7 @@ const SignIn = () => {
             </Title>
           ))}
         </Head>
+
         <Form
           ref={ref}
           onSubmit={handleSubmit}
@@ -87,6 +98,13 @@ const SignIn = () => {
             label={selected}
           />
         </Form>
+
+        <Recovery>
+          Esqueceu a senha?
+          <RecoveryLink to="/recovery">
+            Clique aqui
+          </RecoveryLink>
+        </Recovery>
       </Container>
 
       <Ilustation />

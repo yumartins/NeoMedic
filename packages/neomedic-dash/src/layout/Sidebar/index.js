@@ -1,5 +1,10 @@
 import React from 'react';
+
+import Logo from 'neomedic-assets/svgs/logo.svg';
 import { bool } from 'prop-types';
+
+import User from '../../assets/images/user.jpg';
+import routes from './routes';
 import {
   Name,
   Item,
@@ -10,9 +15,6 @@ import {
   NavIcon,
   Navigation,
 } from './styles';
-import Logo from '../../assets/images/logo.svg';
-import routes from './routes';
-import User from '../../assets/images/user.jpg';
 
 const Sidebar = ({ full }) => (
   <Article full={full}>
