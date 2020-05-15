@@ -25,7 +25,7 @@ const headings = [
 ];
 
 const SignIn = () => {
-  const [loading, onLoading] = useState(true);
+  const [loading, onLoading] = useState(false);
   const [selected, onSelected] = useState(headings[0]);
 
   const ref = useRef(null);
@@ -41,8 +41,9 @@ const SignIn = () => {
    */
   const handleSubmit = async (data) => {
     onLoading(! loading);
-    await run('login', data.username, data.password);
-    navigate('/');
+    await run('login', data.username, data.password)
+      .then(() => navigate('/'))
+      .catch(() => onLoading(false));
   };
 
   return (
