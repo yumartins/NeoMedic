@@ -1,6 +1,9 @@
 import { color, typograph, easing } from 'neomedic-styles';
 import styled from 'styled-components';
 
+import Button from '../../components/Button';
+import Input from '../../components/Form/Input';
+
 const {
   size,
   weight,
@@ -43,6 +46,16 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+`;
+
+export const InputForm = styled(Input)`
+  margin-bottom: 24px;
+`;
+
+export const Action = styled(Button)`
+  margin-top: 24px;
+  width: 100%;
   justify-content: center;
 `;
 

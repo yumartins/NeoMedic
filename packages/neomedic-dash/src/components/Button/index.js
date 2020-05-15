@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { string, bool } from 'prop-types';
+
 import { Content, NavIcon } from './styles';
 
 const Button = ({

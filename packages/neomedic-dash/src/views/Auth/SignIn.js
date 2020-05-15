@@ -2,13 +2,14 @@ import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Form } from '@unform/web';
-import { api, useAuth } from 'neomedic-authorization';
+import { useAuth } from 'neomedic-authorization';
 
-import Input from '../../components/Form/Input';
 import {
   Head,
   View,
   Title,
+  Action,
+  InputForm,
   Container,
   Ilustation,
 } from './styles';
@@ -33,11 +34,9 @@ const SignIn = () => {
    * Handle login attempt.
    */
   const handleSubmit = async (data) => {
-    const response = await api.post('/login', data);
+    await run('login', data.username, data.password);
 
-    console.log(response);
-
-    navigate('/');
+    navigate('/dashboard');
   };
 
   return (
@@ -58,19 +57,35 @@ const SignIn = () => {
           ref={ref}
           onSubmit={handleSubmit}
         >
-          <Input
+          <InputForm
             name="username"
             label="Usuário"
           />
-          <Input
+
+          <InputForm
             name="password"
             label="Senha"
             type="password"
           />
 
-          <button type="submit">
-            Entrar
-          </button>
+          {selected === 'Cadastrar' && (
+            <>
+              <InputForm
+                name="state"
+                label="Qual o seu estado?"
+              />
+
+              <InputForm
+                name="city"
+                label="Qual a sua cidade?"
+              />
+            </>
+          )}
+
+          <Action
+            submit
+            label={selected}
+          />
         </Form>
       </Container>
 

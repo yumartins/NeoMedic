@@ -5,7 +5,7 @@ import Dashboard from '../views/App/Dash';
 
 const AppNavigation = () => (
   <Routes>
-    <Route path="/" element={<Dashboard />} />
+    <Route path="/dashboard" element={<Dashboard />} />
   </Routes>
 );
 
