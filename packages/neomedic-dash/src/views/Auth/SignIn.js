@@ -5,6 +5,7 @@ import { Form } from '@unform/web';
 import Image from 'neomedic-assets/svgs/logo.svg';
 import { useAuth } from 'neomedic-authorization';
 
+import Loading from '../../components/Loading';
 import {
   Head,
   Logo,
@@ -40,7 +41,7 @@ const SignIn = () => {
   const handleSubmit = async (data) => {
     await run('login', data.username, data.password);
 
-    navigate('/dashboard');
+    navigate('/');
   };
 
   return (
@@ -98,6 +99,8 @@ const SignIn = () => {
             label={selected}
           />
         </Form>
+
+        <Loading />
 
         <Recovery>
           Esqueceu a senha?

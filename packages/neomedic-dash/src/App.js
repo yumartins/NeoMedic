@@ -17,8 +17,6 @@ const App = () => {
       isLoggedIn,
     } = useAuth();
 
-    console.log(isLoggedIn);
-
     useEffect(() => {
       const fetchInitial = async () => {
         await Promise.all([

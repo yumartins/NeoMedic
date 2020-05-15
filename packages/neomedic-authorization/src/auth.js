@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
 
       await localStorage.setItem(TOKEN_USER, data[0]);
 
-      return data;
+      return data[0];
     } catch (err) {
       api.defaults.headers.common.Authorization = '';
     }
