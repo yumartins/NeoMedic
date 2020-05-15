@@ -17,6 +17,8 @@ const App = () => {
       isLoggedIn,
     } = useAuth();
 
+    console.log(isLoggedIn);
+
     useEffect(() => {
       const fetchInitial = async () => {
         await Promise.all([
@@ -28,7 +30,7 @@ const App = () => {
       };
 
       fetchInitial();
-    }, [run]);
+    }, []);
 
     return (
       <RootNavigator signedIn={isLoggedIn} />

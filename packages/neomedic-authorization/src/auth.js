@@ -55,14 +55,14 @@ export const AuthProvider = ({ children }) => {
       return null;
     }
 
-    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+    api.defaults.headers.common.Authorization = `${token}`;
 
     try {
       const {
         data,
       } = await api.get('/admin/user');
 
-      await localStorage.setItem(TOKEN_USER, data);
+      await localStorage.setItem(TOKEN_USER, data[0]);
 
       return data;
     } catch (err) {

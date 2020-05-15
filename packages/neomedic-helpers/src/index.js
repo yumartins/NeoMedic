@@ -22,7 +22,7 @@ export const useStoreModule = (state, actions, extra = {}) => useMemo(() => ({
 
     return action(...payload);
   },
-}), [actions, extra, state]);
+}), [state]);
 
 
 /**
