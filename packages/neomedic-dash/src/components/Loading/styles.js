@@ -1,3 +1,4 @@
+import { color } from 'neomedic-styles';
 import styled, { keyframes } from 'styled-components';
 
 const animDrt = '0.4s';
@@ -14,7 +15,11 @@ const bouncing = keyframes`
 `;
 
 
-export const Dot = styled.span``;
+export const Dot = styled.span`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+`;
 
 export const Dots = styled.div`
   width: 48px;
@@ -22,12 +27,18 @@ export const Dots = styled.div`
 	justify-content: space-between;
 	align-items: center;
 
-  ${Dot} {
-    width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background: #00f1ca;
+  ${({ type }) => (type === 'primary'
+    ? `
+      ${Dot} {
+        background-color: ${color.primary._500}
+      }`
+    : `
+      ${Dot} {
+        background-color: ${color.gray._100}
+      }
+    `)}
 
+  ${Dot} {
     &:nth-child(1) {
 			animation: ${bouncing} ${animDrt} alternate infinite ${animEase};
 		}
