@@ -34,13 +34,13 @@ export const Right = styled.div`
 `;
 
 export const SubTitle = styled.h4`
-  font-size: ${typograph.size.s3};
+  font-size: ${typograph.size.s3}px;
   font-weight: ${typograph.weight.regular};
   color: ${color.gray._600};
 `;
 
 export const Title = styled.h1`
-  font-size: ${typograph.size.l2};
+  font-size: ${typograph.size.l2}px;
   font-weight: ${typograph.weight.bold};
   color: ${color.gray._1100};
 `;
@@ -63,7 +63,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   color: ${color.gray._600};
-  font-size: ${typograph.size.s3};
+  font-size: ${typograph.size.s3}px;
   padding: 8px 16px;
   margin-right: 32px;
   border-radius: ${radius.md}px;

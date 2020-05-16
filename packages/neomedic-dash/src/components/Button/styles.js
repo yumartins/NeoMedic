@@ -20,8 +20,8 @@ export const NavIcon = styled(Icon)`
 `;
 
 export const Content = styled.button`
-  font-size: ${typograph.size.s3};
-  line-height: ${typograph.size.s3};
+  font-size: ${typograph.size.s3}px;
+  line-height: ${typograph.size.s3}px;
   font-weight: ${typograph.weight.semiBold};
   border-radius: ${radius.md}px;
   border: 1px solid transparent;

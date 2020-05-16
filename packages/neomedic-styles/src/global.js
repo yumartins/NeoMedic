@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+
 import { color, typograph } from './index';
 
 const GlobalStyles = createGlobalStyle`

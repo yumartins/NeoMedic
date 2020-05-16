@@ -27,8 +27,8 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled.h1`
-  font-size: ${({ selected }) => (selected ? size.l1 : size.m1)};
-  line-height: ${size.l1};
+  font-size: ${({ selected }) => (selected ? `${size.l1}px` : `${size.m1}px`)};
+  line-height: ${size.l1}px;
   font-weight: ${({ selected }) => (selected ? weight.bold : weight.regular)};
   color: ${({ selected }) => (selected ? gray._700 : gray._500)};
   transition: all .5s ${easing.rubber};
@@ -59,7 +59,7 @@ export const Container = styled.div`
 export const InputForm = styled.div`
   width: 100%;
   margin-bottom: 24px;
-  display: ${({ reveal }) => (reveal ? 'flex' : 'none')}
+  display: ${({ reveal }) => (reveal ? 'flex' : 'none')};
 `;
 
 export const Action = styled(Button)`
@@ -73,7 +73,7 @@ export const Recovery = styled.span`
   display: flex;
   bottom: 40px;
   color: ${gray._600};
-  font-size: ${size.s2};
+  font-size: ${size.s2}px;
   left: 50%;
   transform: translateX(-50%);
 `;

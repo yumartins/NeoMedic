@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+
 import { NavLink } from 'react-router-dom';
+
 import {
   color, typograph, radius, shadow,
 } from 'neomedic-styles';
+import styled from 'styled-components';
+
 import { Icon } from '../../components/Icon';
 
 export const Image = styled.img`
@@ -41,7 +44,7 @@ export const Item = styled(NavLink)`
   align-items: center;
   color: ${color.gray._600};
   padding: 16px 32px;
-  font-size: ${typograph.size.s3};
+  font-size: ${typograph.size.s3}px;
   border-radius: ${radius.lg}px;
   margin: 0 8px;
 
@@ -56,7 +59,7 @@ export const Item = styled(NavLink)`
 `;
 
 export const Name = styled.h6`
-  font-size: ${typograph.size.s2};
+  font-size: ${typograph.size.s2}px;
   font-weight: ${typograph.weight.semiBold};
   color: ${color.gray._1000};
   margin-left: 8px;

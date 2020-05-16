@@ -40,7 +40,10 @@ const Input = ({
 
   return (
     <View>
-      <Target focus={value.length > 0}>
+      <Target
+        error={error}
+        focus={value.length > 0}
+      >
         <Label htmlFor={fieldName}>{label}</Label>
         <Wrapper
           {...rest}
