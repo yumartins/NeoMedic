@@ -1,5 +1,5 @@
 import 'normalize.css';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useAuth, AuthProvider } from 'neomedic-authorization';
 import { GlobalStyles } from 'neomedic-styles';
@@ -11,6 +11,8 @@ const App = () => {
    * Router.
    */
   const Router = () => {
+    const [loading, onLoading] = useState(true);
+
     const {
       run,
       checked,
@@ -24,11 +26,19 @@ const App = () => {
            * Check auth.
            */
           run('check'),
+
+          onLoading(false),
         ]);
       };
 
       fetchInitial();
     }, []);
+
+    if (loading) {
+      return (
+        <h1>Loading...</h1>
+      );
+    }
 
     return (
       <RootNavigator signedIn={isLoggedIn} />
