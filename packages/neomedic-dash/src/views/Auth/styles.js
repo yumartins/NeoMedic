@@ -84,6 +84,16 @@ export const RecoveryLink = styled(Link)`
   font-weight: ${weight.semiBold};
 `;
 
+export const Error = styled.span`
+  color: ${color.danger._500};
+  font-size: ${size.s2}px;
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Ilustation = styled.div`
   width: 100%;
   height: 100%;

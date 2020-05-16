@@ -11,6 +11,7 @@ import {
   Head,
   Logo,
   View,
+  Error,
   Title,
   Action,
   Recovery,
@@ -26,6 +27,7 @@ const headings = [
 ];
 
 const SignIn = () => {
+  const [error, onError] = useState('');
   const [loading, onLoading] = useState(false);
   const [selected, onSelected] = useState(headings[0]);
 
@@ -54,13 +56,18 @@ const SignIn = () => {
       onLoading(! loading);
       await run('login', data.username, data.password)
         .then(() => navigate('/'))
-        .catch(() => onLoading(false));
+        .catch(() => {
+          onLoading(false);
+          onError('Desculpe, verifique os dados.');
+
+          setTimeout(() => onError(''), 4000);
+        });
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};
 
-        err.inner.forEach((error) => {
-          errorMessages[error.path] = error.message;
+        err.inner.forEach((errors) => {
+          errorMessages[errors.path] = errors.message;
         });
 
         ref.current.setErrors(errorMessages);
@@ -134,6 +141,10 @@ const SignIn = () => {
             label={selected}
             loading={loading}
           />
+
+          {error.length > 0 && (
+            <Error>{error}</Error>
+          )}
         </Form>
 
         <Recovery>
