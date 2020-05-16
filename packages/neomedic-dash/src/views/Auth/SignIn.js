@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Form } from '@unform/web';
 import Image from 'neomedic-assets/svgs/logo.svg';
 import { useAuth } from 'neomedic-authorization';
+import * as Yup from 'yup';
 
-import Loading from '../../components/Loading';
+import Input from '../../components/Form/Input';
 import {
   Head,
   Logo,
@@ -40,11 +41,55 @@ const SignIn = () => {
    * Handle login attempt.
    */
   const handleSubmit = async (data) => {
-    onLoading(! loading);
-    await run('login', data.username, data.password)
-      .then(() => navigate('/'))
-      .catch(() => onLoading(false));
+    try {
+      const schema = Yup.object().shape({
+        username: Yup.string().required('Não esqueça o nome de usuário =)'),
+        password: Yup.string().required('Não esqueça a senha =)'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      onLoading(! loading);
+      await run('login', data.username, data.password)
+        .then(() => navigate('/'))
+        .catch(() => onLoading(false));
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        const errorMessages = {};
+
+        err.inner.forEach((error) => {
+          errorMessages[error.path] = error.message;
+        });
+
+        ref.current.setErrors(errorMessages);
+      }
+    }
   };
+
+  const inputs = [
+    {
+      name: 'username',
+      label: 'Nome de usuário',
+      reveal: true,
+    },
+    {
+      name: 'password',
+      label: 'Senha',
+      reveal: true,
+    },
+    {
+      name: 'state',
+      label: 'Qual o seu estado?',
+      reveal: selected === 'Cadastrar',
+    },
+    {
+      name: 'city',
+      label: 'Qual a sua cidade?',
+      reveal: selected === 'Cadastrar',
+    },
+  ];
 
   return (
     <View>
@@ -71,30 +116,18 @@ const SignIn = () => {
           ref={ref}
           onSubmit={handleSubmit}
         >
-          <InputForm
-            name="username"
-            label="Usuário"
-          />
-
-          <InputForm
-            name="password"
-            label="Senha"
-            type="password"
-          />
-
-          {selected === 'Cadastrar' && (
-            <>
-              <InputForm
-                name="state"
-                label="Qual o seu estado?"
+          {inputs.map(({ name, label, reveal }) => (
+            <InputForm
+              key={name}
+              reveal={reveal}
+            >
+              <Input
+                name={name}
+                label={label}
+                type={name === 'password' ? 'password' : 'text'}
               />
-
-              <InputForm
-                name="city"
-                label="Qual a sua cidade?"
-              />
-            </>
-          )}
+            </InputForm>
+          ))}
 
           <Action
             submit

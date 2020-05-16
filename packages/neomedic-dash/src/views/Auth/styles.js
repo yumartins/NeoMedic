@@ -4,7 +4,6 @@ import { color, typograph, easing } from 'neomedic-styles';
 import styled from 'styled-components';
 
 import Button from '../../components/Button';
-import Input from '../../components/Form/Input';
 
 const {
   size,
@@ -57,8 +56,10 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const InputForm = styled(Input)`
+export const InputForm = styled.div`
+  width: 100%;
   margin-bottom: 24px;
+  display: ${({ reveal }) => (reveal ? 'flex' : 'none')}
 `;
 
 export const Action = styled(Button)`
