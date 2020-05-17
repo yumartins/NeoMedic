@@ -1,3 +1,3 @@
 export {
-  dashboard_BR as dashboard,
+  default as dashboardBR,
 } from './dashboard';

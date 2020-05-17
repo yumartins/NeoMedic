@@ -1,8 +1,9 @@
 import 'normalize.css';
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect } from 'react';
+import { I18nextProvider } from 'react-i18next';
 import { useAuth, AuthProvider } from 'neomedic-authorization';
 import { GlobalStyles } from 'neomedic-styles';
+import i18n from 'neomedic-i18n';
 
 import RootNavigator from './routes';
 
@@ -11,8 +12,6 @@ const App = () => {
    * Router.
    */
   const Router = () => {
-    const [loading, onLoading] = useState(true);
-
     const {
       run,
       checked,
@@ -26,19 +25,11 @@ const App = () => {
            * Check auth.
            */
           run('check'),
-
-          onLoading(false),
         ]);
       };
 
       fetchInitial();
     }, []);
-
-    if (loading) {
-      return (
-        <h1>Loading...</h1>
-      );
-    }
 
     return (
       <RootNavigator signedIn={isLoggedIn} />
@@ -48,7 +39,9 @@ const App = () => {
   return (
     <AuthProvider>
       <GlobalStyles />
-      <Router />
+      <I18nextProvider i18n={i18n}>
+        <Router />
+      </I18nextProvider>
     </AuthProvider>
   );
 };

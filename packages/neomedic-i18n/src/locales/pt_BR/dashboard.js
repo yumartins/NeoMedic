@@ -1,7 +1,7 @@
-const dashboard = {
+const dashboardBR = {
   auth: {
     welcome: 'Bem vindo',
   },
 };
 
-export default dashboard;
+export default dashboardBR;

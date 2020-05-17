@@ -1,11 +1,11 @@
 import { initReactI18next } from 'react-i18next';
 
 import i18n from 'i18next';
-import Backend from 'i18next-xhr-backend';
+import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import { dashboard_BR } from './locales/pt_BR';
-import { dashboard_US } from './locales/en_US';
+import { dashboardBR } from './locales/pt_BR';
+import { dashboardUS } from './locales/en_US';
 
 i18n
   .use(Backend)
@@ -18,10 +18,10 @@ i18n
 
     resources: {
       'pt_BR': {
-        dash: dashboard_BR,
+        dash: dashboardBR,
       },
       'en_US': {
-        dash: dashboard_US,
+        dash: dashboardUS,
       },
     },
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 import { Form } from '@unform/web';
 import Image from 'neomedic-assets/svgs/logo.svg';
 import { useAuth } from 'neomedic-authorization';
@@ -30,6 +30,8 @@ const SignIn = () => {
   const [error, onError] = useState('');
   const [loading, onLoading] = useState(false);
   const [selected, onSelected] = useState(headings[0]);
+
+  const { t } = useTranslation('dash');
 
   const ref = useRef(null);
 
@@ -106,6 +108,8 @@ const SignIn = () => {
           src={Image}
           alt="NeoMedic"
         />
+
+        <h1>{t('auth.welcome')}</h1>
 
         <Head>
           {headings.map((value) => (
