@@ -1,6 +1,10 @@
 {
   "name": "neomedic",
   "private": true,
+  "author": {
+    "name": "Yuri Martins",
+    "email": "yuri@estudioflow.com.br"
+  },
   "repository": "https://github.com/yumartins/neomedic.git",
   "scripts": {
     "test": "bash ./.bin/sugar.sh test $*",
