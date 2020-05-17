@@ -1,0 +1,24 @@
+{
+  "name": "neomedic-i18n",
+  "version": "0.0.1",
+  "private": false,
+  "author": "Yuri Martins",
+  "description": "neomedic i18n",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src --out-dir ./build --source-maps -D",
+    "coverage": "nyc --reporter=html mocha --require @babel/register",
+    "test": "cross-env NODE_ENV=testing mocha --require @babel/register"
+  },
+  "babel": {
+    "presets": [
+      "module:neomedic-babel-preset"
+    ]
+  },
+  "dependencies": {
+    "i18next": "^19.4.4",
+    "i18next-browser-languagedetector": "^4.1.1",
+    "i18next-http-backend": "^1.0.11",
+    "react-i18next": "^11.4.0"
+  }
+}

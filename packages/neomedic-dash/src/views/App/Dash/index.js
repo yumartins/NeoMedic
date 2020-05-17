@@ -27,8 +27,8 @@ const Dashboard = () => (
     <Container full>
       <Head>
         <Left>
-          <SubTitle>Agende uma</SubTitle>
-          <Title>Consulta</Title>
+          <SubTitle>Agenda uma consulta com</SubTitle>
+          <Title>Médicos especializados</Title>
         </Left>
 
         <Right>
