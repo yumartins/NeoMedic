@@ -1,9 +1,10 @@
 import 'normalize.css';
 import React, { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
+
 import { useAuth, AuthProvider } from 'neomedic-authorization';
-import { GlobalStyles } from 'neomedic-styles';
 import i18n from 'neomedic-i18n';
+import { GlobalStyles } from 'neomedic-styles';
 
 import RootNavigator from './routes';
 

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { Form } from '@unform/web';
 import Image from 'neomedic-assets/svgs/logo.svg';
 import { useAuth } from 'neomedic-authorization';
@@ -21,17 +22,17 @@ import {
   RecoveryLink,
 } from './styles';
 
-const headings = [
-  'Entrar',
-  'Cadastrar',
-];
-
 const SignIn = () => {
+  const { t } = useTranslation('dash');
+
+  const headings = [
+    t('auth.headers.signIn'),
+    t('auth.headers.signUp'),
+  ];
+
   const [error, onError] = useState('');
   const [loading, onLoading] = useState(false);
   const [selected, onSelected] = useState(headings[0]);
-
-  const { t } = useTranslation('dash');
 
   const ref = useRef(null);
 
@@ -47,8 +48,8 @@ const SignIn = () => {
   const handleSubmit = async (data) => {
     try {
       const schema = Yup.object().shape({
-        username: Yup.string().required('Não esqueça o nome de usuário =)'),
-        password: Yup.string().required('Não esqueça a senha =)'),
+        username: Yup.string().required(t('auth.errors.username')),
+        password: Yup.string().required(t('auth.errors.password')),
       });
 
       await schema.validate(data, {
@@ -60,7 +61,7 @@ const SignIn = () => {
         .then(() => navigate('/'))
         .catch(() => {
           onLoading(false);
-          onError('Desculpe, verifique os dados.');
+          onError(t('auth.errors.general'));
 
           setTimeout(() => onError(''), 4000);
         });
@@ -80,22 +81,22 @@ const SignIn = () => {
   const inputs = [
     {
       name: 'username',
-      label: 'Nome de usuário',
+      label: t('auth.inputs.name'),
       reveal: true,
     },
     {
       name: 'password',
-      label: 'Senha',
+      label: t('auth.inputs.password'),
       reveal: true,
     },
     {
       name: 'state',
-      label: 'Qual o seu estado?',
+      label: t('auth.inputs.state'),
       reveal: selected === 'Cadastrar',
     },
     {
       name: 'city',
-      label: 'Qual a sua cidade?',
+      label: t('auth.inputs.city'),
       reveal: selected === 'Cadastrar',
     },
   ];
@@ -108,8 +109,6 @@ const SignIn = () => {
           src={Image}
           alt="NeoMedic"
         />
-
-        <h1>{t('auth.welcome')}</h1>
 
         <Head>
           {headings.map((value) => (
@@ -152,9 +151,9 @@ const SignIn = () => {
         </Form>
 
         <Recovery>
-          Esqueceu a senha?
+          {t('auth.recovery.value')}
           <RecoveryLink to="/recovery">
-            Clique aqui
+            {t('auth.recovery.action')}
           </RecoveryLink>
         </Recovery>
       </Container>
