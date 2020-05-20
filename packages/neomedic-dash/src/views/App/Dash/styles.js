@@ -1,8 +1,6 @@
-import { NavLink } from 'react-router-dom';
-
 import { Form } from '@unform/web';
 import {
-  color, shadow, typograph, radius,
+  color, shadow, typograph,
 } from 'neomedic-styles';
 import styled from 'styled-components';
 
@@ -53,24 +51,4 @@ export const Search = styled(Form)`
 export const Cards = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const List = styled.ul`
-  margin-top: 72px;
-  display: flex;
-  align-items: center;
-`;
-
-export const ListItem = styled.li`
-  color: ${color.gray._600};
-  font-size: ${typograph.size.s3}px;
-  padding: 8px 16px;
-  margin-right: 32px;
-  border-radius: ${radius.md}px;
-  border: 1px solid ${color.gray._300};
-  cursor: pointer;
-`;
-
-export const Card = styled(NavLink)`
-
 `;

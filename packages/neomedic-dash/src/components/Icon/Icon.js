@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { string, number } from 'prop-types';
+
 import { SVG, Path } from './styles';
 
 const Icon = ({
