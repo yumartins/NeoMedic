@@ -1,11 +1,12 @@
 import 'normalize.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
 
 import { useAuth, AuthProvider } from 'neomedic-authorization';
 import i18n from 'neomedic-i18n';
 import { GlobalStyles } from 'neomedic-styles';
 
+import SplashScreen from './layout/Splash';
 import RootNavigator from './routes';
 
 const App = () => {
@@ -13,6 +14,8 @@ const App = () => {
    * Router.
    */
   const Router = () => {
+    const [loading, onLoading] = useState(true);
+
     const {
       run,
       checked,
@@ -21,16 +24,19 @@ const App = () => {
 
     useEffect(() => {
       const fetchInitial = async () => {
-        await Promise.all([
-          /**
-           * Check auth.
-           */
-          run('check'),
-        ]);
+        /**
+         * Check auth.
+         */
+        await run('check');
+        onLoading(false);
       };
 
       fetchInitial();
     }, []);
+
+    if (loading) {
+      return <SplashScreen />;
+    }
 
     return (
       <RootNavigator signedIn={isLoggedIn} />
