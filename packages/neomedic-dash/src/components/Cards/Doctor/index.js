@@ -7,6 +7,8 @@ import {
   View,
   Name,
   Image,
+  Content,
+  ViewIcon,
   IconUser,
   Profession,
 } from './styles';
@@ -19,9 +21,15 @@ const Doctor = ({
   <View>
     {image
       ? <Image src={image} />
-      : <IconUser name={person} />}
-    <Name>{name}</Name>
-    <Profession>{profession}</Profession>
+      : (
+        <ViewIcon>
+          <IconUser name={person} />
+        </ViewIcon>
+      )}
+    <Content>
+      <Name>{name}</Name>
+      <Profession>{profession}</Profession>
+    </Content>
   </View>
 );
 

@@ -48,7 +48,7 @@ const Dashboard = () => (
 
       <Cards>
         <CardDoctor
-          name="Yuri Martins"
+          name="Dr. Yuri Martins"
           profession="Cardiologista"
         />
       </Cards>

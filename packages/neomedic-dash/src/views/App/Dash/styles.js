@@ -49,6 +49,8 @@ export const Search = styled(Form)`
 `;
 
 export const Cards = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 32px;
+  column-gap: 32px;
 `;
