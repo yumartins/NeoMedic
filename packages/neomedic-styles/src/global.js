@@ -48,7 +48,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${typograph.family};
-    background-color: "#FAFBFF";
+    background-color: #FFF;
     margin: 0;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;

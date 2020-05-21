@@ -1,4 +1,4 @@
-import { color, shadow } from 'neomedic-styles';
+import { color, typograph } from 'neomedic-styles';
 import styled from 'styled-components';
 
 import { Icon } from '../../Icon';
@@ -8,7 +8,6 @@ export const View = styled.div`
   border: 1px solid ${color.gray._300};
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 export const Image = styled.img``;
@@ -35,9 +34,15 @@ export const Content = styled.div`
   padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
-export const Name = styled.h5``;
+export const Name = styled.h5`
+  font-size: ${typograph.size.m1}px;
+  color: ${color.gray._700};
+`;
 
-export const Profession = styled.span``;
+export const Profession = styled.span`
+  font-size: ${typograph.size.s3}px;
+  color: ${color.gray._600};
+  margin-top: 4px;
+`;
