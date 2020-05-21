@@ -54,6 +54,19 @@ export const Category = styled.div`
   flex-direction: column;
 `;
 
+export const HeadCategory = styled.div`
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const TitleCategory = styled.h2`
+  font-size: ${typograph.size.m2}px;
+  color: ${color.gray._700};
+  font-weight: ${typograph.weight.regular};
+`;
+
 export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);

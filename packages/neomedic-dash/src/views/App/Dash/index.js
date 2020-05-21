@@ -19,6 +19,8 @@ import {
   Category,
   SubTitle,
   Container,
+  HeadCategory,
+  TitleCategory,
 } from './styles';
 
 const Dashboard = () => {
@@ -64,6 +66,10 @@ const Dashboard = () => {
         </Search>
 
         <Category>
+          <HeadCategory>
+            <TitleCategory>Médicos em destaques</TitleCategory>
+          </HeadCategory>
+
           <Cards>
             {medics !== null
               ? medics.content.map(({ id, name, specialization }) => (
