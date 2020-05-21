@@ -48,6 +48,12 @@ export const Search = styled(Form)`
   margin-top: 48px;
 `;
 
+export const Category = styled.div`
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
